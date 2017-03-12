@@ -25,7 +25,7 @@
   },
 
   "dependencies": {
-    "express": "^4.14.1"
+    "express": "~3.4.4"
   },
   "devDependencies": {},
   "bundleDependencies": [],
