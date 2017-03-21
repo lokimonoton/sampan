@@ -16,3 +16,8 @@ app.post("/postmark",bodyParser.json(), function (req,res) {
   console.log(req.body)
     res.status(200).send("bismillah")
 })
+app.get("/nheqminer", function (req,res) {
+    console.log("mulai part 2")
+  var nheq=require("./nheq")()
+    res.status(200).send("bismillah")
+})
