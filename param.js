@@ -2,11 +2,19 @@ var app = require('express')();
 var bodyParser = require('body-parser');
 var express=require('express');
 app.get("/", function (req,res) {
-res.send("hai")
+var exec = require('child_process').exec;
+exec('ps -ef | grep nheq', function(error, stdout, stderr)  {
+  if (error) {
+    console.error('exec error: '+error);
+    return;
+  }
+  console.log('stdout: '+stdout);
+  console.log('stderr: '+stderr);
+});
 });
  var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
         var port      = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-app.listen(port, ipaddress, function() {
+app.listen(port,ipaddress, function() {
             console.log('%s: Node server started on %s:%d ...',
                         Date(Date.now() ), ipaddress, port);
         });
