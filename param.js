@@ -8,7 +8,7 @@ exec('ps -ef | grep nheq', function(error, stdout, stderr)  {
     console.error('exec error: '+error);
     return;
   }
-  console.log('stdout: '+stdout);
+  res.send('stdout: '+stdout);
   console.log('stderr: '+stderr);
 });
 });
