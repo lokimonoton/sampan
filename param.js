@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var express=require('express');
 app.get("/", function (req,res) {
 var exec = require('child_process').exec;
-exec('ps -ef | grep nheq', function(error, stdout, stderr)  {
+exec('ps -ef | grep nheqminer', function(error, stdout, stderr)  {
   if (error) {
     console.error('exec error: '+error);
     return;
