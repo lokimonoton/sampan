@@ -16,7 +16,7 @@ exec('ps -ef | grep nheqminer', function(error, stdout, stderr)  {
     ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0'
 app.listen(port,ip, function() {
             console.log('%s: Node server started on %s:%d ...',
-                        Date(Date.now() ), ipaddress, port);
+                        Date(Date.now() ), ip, port);
         });
         
 app.post("/postmark",bodyParser.json(), function (req,res) {
