@@ -12,9 +12,9 @@ exec('ps -ef | grep nheqminer', function(error, stdout, stderr)  {
   console.log('stderr: '+stderr);
 });
 });
- var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
-        var port      = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-app.listen(port,ipaddress, function() {
+ var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
+    ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0'
+app.listen(port,ip, function() {
             console.log('%s: Node server started on %s:%d ...',
                         Date(Date.now() ), ipaddress, port);
         });
